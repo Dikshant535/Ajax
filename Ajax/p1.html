@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+    
+    <div>
+        <div id="change">
+            <h2>This is goona be changed.....</h2>
+        </div>
+        <button id="btnm" onclick="load()">Click To Show Magic</button>
+    </div>
+</body>
+</html>
+<script>
+
+
+
+    $(document).ready(function(){
+
+        $("#btnm").click(function(){
+
+            $.post("load.html",{
+
+                name : "Dikshant Singh Bisht",
+                subs : 'subscribe'
+
+            },function(data,status){
+
+                $("#change").html(data);
+                alert(status);
+
+            });
+
+        });
+
+    });
+
+    // $(document).ready(function(){
+
+    //     $("#btnm").click(function(){
+
+    //         $.get("load.html",function(data,status){
+
+    //             $("#change").html(data);
+    //             alert(status);
+
+    //         });
+
+
+    //     });
+
+
+    // });
+
+    // $(document).ready(function(){
+
+        
+    //     $("#btnm").click(function(){
+
+    //         $.get("load.html",function(data,status){
+
+    //             $("#change").html(data);
+    //             alert(status);
+    //         });
+    //     });
+
+    // });
+
+    // $(document).ready(function(){
+
+    //     $("#btnm").click(function(){
+
+    //         let req = new XMLHttpRequest();
+    //         req.open("GET","load.html",true);
+    //         req.send();
+
+    //         req.onreadystatechange = function(){
+
+    //             if(this.readyState == 4 && this.status == 200){
+
+    //                     document.getElementById("change").innerHTML = this.responseText;
+    //             }
+
+    //         }
+
+    //     });
+    // });
+
+    // function load(){
+
+    //     $(document).ready(function(){
+
+    //         $("#change").load("load.html",function(){
+
+    //             alert("Magic....");
+
+    //         })
+
+    //     })
+    // }
+
+    // function load(){
+
+    //     let req = new XMLHttpRequest();
+    //     req.open("GET","load.html",true);
+    //     req.send();
+
+    //     req.onreadystatechange = function() {
+
+    //         if(this.readyState == 4 && this.status == 200){
+
+    //                 alert("Magic....");
+    //                 document.getElementById("change").innerHTML = this.responseText ;
+    //         }
+
+
+    //     }
+
+    // }
+
+
+
+</script>

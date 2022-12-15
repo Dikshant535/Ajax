@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<style>
+
+
+</style>
+<body>
+    <div id="box1">
+
+        <div id="loadContent">
+            <h2>This is going to be change.....</h2>
+        </div>
+        <button id="btnClick" onclick='load()' >Click</button>
+
+    </div>
+</body>
+<script type="text/javascript">
+
+//     $(document).ready(function(){
+
+//         $('#btnClick').click(function(){
+
+//             load();
+
+//         })
+        
+//     })  ;                                                         
+//    function load(){
+
+//     $('#loadContent').load('load.html',function(){
+
+//         alert('Hiii This is Cool..🤩');
+//     });
+
+//    }
+
+//    function load(){
+
+//         $(document).ready(function(){
+
+//                $('#loadContent') .load('load.html',function(){
+
+//                     alert("Hiii This is Cool..🤩");
+
+//                })
+
+
+//         })
+
+
+//    }
+
+    // function load(){
+
+    //     console.log("Inside Load ()");
+    //     let re = new XMLHttpRequest();
+    //     re.open('GET','load.html',true);
+    //     re.send();
+
+    //     re.onreadystatechange = function(){
+
+    //         if(re.readyState == 4 && re.status == 200){
+
+    //             document.getElementById('loadContent').innerHTML=re.responseText;
+
+    //         }
+
+
+    //     }
+
+
+
+    // }
+
+
+    function load(){
+
+
+        let re = new XMLHttpRequest();
+        re.open('GET','load.html',true);
+        re.send();
+
+        re.onreadystatechange = function(){
+
+            if(this.readyState == 4 && this.status == 200){
+
+                document.getElementById("loadContent").innerHTML = this.responseText;
+            }
+
+        }
+
+
+    }
+
+</script>
+</html>
